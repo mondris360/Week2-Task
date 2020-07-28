@@ -77,4 +77,36 @@ public class PersonTest {
         Assertions.assertEquals(expectedResult, getLastName);
     }
 
+    // test case for the set age method
+
+    public static Object[][] Tests_Conditions_setAge_Method(){
+        return new Object[][]{
+                // should not add new teacher
+                {" "},
+                {"  "},
+                {null},
+                {101},
+                {0},
+                {-3542}
+
+        };
+    }
+
+    @ParameterizedTest
+    @MethodSource("Tests_Conditions_setAge_Method")
+    @Test
+    void shouldNot_Set_Age(int age){
+        boolean setAge = person.setAge(age);
+        Assertions.assertFalse(setAge);
+    }
+
+    @Test
+    void should_Set_Age(){
+        boolean setAge = person.setAge(40);
+        int getAge =  person.getAge();
+        int expectedResult = 40;
+        Assertions.assertTrue(setAge);
+        Assertions.assertEquals(expectedResult, getAge);
+    }
+
 }

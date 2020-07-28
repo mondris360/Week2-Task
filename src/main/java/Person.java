@@ -42,9 +42,5 @@ public class Person {
         this.age = age;
         return true;
     }
-
-    public boolean setAddress(Address address) {
-        this.address = address;
-        return true;
-    }
+    
 }

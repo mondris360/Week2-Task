@@ -35,23 +35,30 @@ public class Address {
         return country;
     }
 
-    public void setStreet(String street) {
+    public boolean setStreet(String street) {
         this.street = street;
+        return true;
     }
 
-    public void setCity(String city) {
+    public boolean setCity(String city) {
         this.city = city;
+        return true;
+
     }
 
-    public void setState(String state) {
+    public boolean setState(String state) {
         this.state = state;
+        return true;
+
     }
 
-    public void setPostalCode(String postalCode) {
+    public boolean setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+        return true;
     }
 
-    public void setCountry(String country) {
+    public boolean setCountry(String country) {
         this.country = country;
+        return true;
     }
 }

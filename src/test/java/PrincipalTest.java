@@ -137,7 +137,7 @@ public class PrincipalTest {
     }
     // should not sack teacher
     @ParameterizedTest
-    @MethodSource
+    @MethodSource("Tests_Conditions_expectedResult_sackTeacher")
     @Test
     void shouldNot_Sack_Teacher(String teacherName){
         boolean sackTeacher = principal.sackTeacher(teacherName);
@@ -151,4 +151,107 @@ public class PrincipalTest {
         boolean sackTeacher4 =  principal.sackTeacher("Mark");
     }
 
+
+    // test cases for assignCourse()
+
+    public static Object[][] Tests_Conditions_assignCourse(){
+        return new Object[][]{
+                // should not assign course
+                {" ", " ", false},
+                {"", "",  false},
+                {"  ", "  ", false},
+                {null, null, false},
+                {"Mark", null, false},
+                {null, "Mark", false},
+                {5000, "Biology", false},
+                {5000, 10245, false},
+                {"Jude","falsecoursename", false }
+
+
+        };
+    }
+    // should not sack teacher
+    @ParameterizedTest
+    @MethodSource("Tests_Conditions_assignCourse")
+    @Test
+    void shouldNot_Assign_Teacher(String teacherName, String courseName ){
+        boolean sackTeacher = principal.assignCourse(teacherName, courseName);
+        Assertions.assertFalse(sackTeacher);
+
+    }
+
+    @Test
+    void should_Assign_Teacher(){
+        principal.addNewTeacher("Andrew Michael",35200);
+        principal.addNewCourse("Mathematics", "JJ1");
+        boolean assignCourse =  principal.assignCourse("Andrew Michael","Mathematics" );
+        Assertions.assertTrue(assignCourse);
+    }
+
+
+    // test cases for removeCourse()
+
+    public static Object[][] Tests_Conditions_removeCourse(){
+        return new Object[][]{
+                // should not assign course
+                {" "},
+                {""},
+                {null},
+                {32545},
+                {-85452},
+                {0},
+                {"falsecoursename"}
+        };
+    }
+    // should not remove course
+    @ParameterizedTest
+    @MethodSource("Tests_Conditions_removeCourse")
+    @Test
+    void shouldNot_Remove_Course(String courseName ){
+        boolean sackTeacher = principal.removeCourse(courseName);
+        Assertions.assertFalse(sackTeacher);
+    }
+
+    // should remove course
+    @Test
+    void should_Remove_Course(){
+        principal.addNewTeacher("Andrew Michael",35200);
+        principal.addNewCourse("Mathematics", "JJ1");
+        boolean assignCourse =  principal.removeCourse("Mathematics");
+        Assertions.assertTrue(assignCourse);
+    }
+
+
+
+    // test cases for removeCourse()
+
+    public static Object[][] Tests_Conditions_removeCourse(){
+        return new Object[][]{
+                // should not assign course
+                {" "},
+                {""},
+                {null},
+                {32545},
+                {-85452},
+                {0},
+                {"falsecoursename"}
+        };
+    }
+    // should not remove course
+    @ParameterizedTest
+    @MethodSource("Tests_Conditions_removeCourse")
+    @Test
+    void shouldNot_Remove_Course(String courseName ){
+        boolean sackTeacher = principal.removeCourse(courseName);
+        Assertions.assertFalse(sackTeacher);
+    }
+
+    // should remove course
+    @Test
+    void should_Remove_Course(){
+        principal.addNewTeacher("Andrew Michael",35200);
+        principal.addNewCourse("Mathematics", "JJ1");
+        boolean assignCourse =  principal.removeCourse("Mathematics");
+        Assertions.assertTrue(assignCourse);
+    }
 }

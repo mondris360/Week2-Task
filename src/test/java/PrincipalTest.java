@@ -224,7 +224,6 @@ public class PrincipalTest {
 
 
     // test cases for removeCourse()
-
     public static Object[][] Tests_Conditions_increaseSchoolFees(){
         return new Object[][]{
                 // should not assign course

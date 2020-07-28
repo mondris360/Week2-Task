@@ -19,6 +19,7 @@ public class Principal {
     public boolean addNewCourse(String courseName, String className){};
     public boolean removeCourse(String courseName){};
     public boolean increaseSchoolFees(String className, double newSchoolFees){};
+    public double getSchoolFees(String className){};
     public boolean decreaseSchoolFees(String className, double newSchoolFees){};
     public void getAllStudentsInAClass(String className){}
     public int getTotalStudentsInAClass(String className){};

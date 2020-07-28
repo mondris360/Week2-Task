@@ -225,33 +225,34 @@ public class PrincipalTest {
 
     // test cases for removeCourse()
 
-    public static Object[][] Tests_Conditions_removeCourse(){
+    public static Object[][] Tests_Conditions_increaseSchoolFees(){
         return new Object[][]{
                 // should not assign course
-                {" "},
-                {""},
-                {null},
-                {32545},
-                {-85452},
-                {0},
-                {"falsecoursename"}
+                {"SS1", " "},
+                {"JJS1", ""},
+                {"SS1", null,},
+                {"SS1", 0},
+                {"JS1", -85452},
+                {"JSS2", "scam"},
+                {"SS35", 1500}
         };
     }
     // should not remove course
     @ParameterizedTest
-    @MethodSource("Tests_Conditions_removeCourse")
+    @MethodSource("Tests_Conditions_increaseSchoolFees")
     @Test
-    void shouldNot_Remove_Course(String courseName ){
-        boolean sackTeacher = principal.removeCourse(courseName);
-        Assertions.assertFalse(sackTeacher);
+    void shouldNot_Increase_SchoolFees(String className, double newSchoolFees ){
+        boolean increaseSchoolFees = principal.increaseSchoolFees(className, newSchoolFees);
+        Assertions.assertFalse(increaseSchoolFees);
     }
 
     // should remove course
     @Test
-    void should_Remove_Course(){
-        principal.addNewTeacher("Andrew Michael",35200);
-        principal.addNewCourse("Mathematics", "JJ1");
-        boolean assignCourse =  principal.removeCourse("Mathematics");
-        Assertions.assertTrue(assignCourse);
+    void should_Increase_School_Fees(){
+        principal.createNewClass("JSS1",5000,15,30);
+        boolean increaseSchoolFees =  principal.increaseSchoolFees("JSS1", 2000);
+        double getClassSchoolFees = principal.getSchoolFees("JSS1");
+        double expectedResult = 7000;
+        Assertions.assertEquals(getClassSchoolFees, expectedResult);
     }
 }

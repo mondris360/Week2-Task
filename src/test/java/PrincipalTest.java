@@ -118,10 +118,37 @@ public class PrincipalTest {
     @ParameterizedTest
     @MethodSource("Tests_Conditions_expectedResult_addNewTeacher")
     @Test
-    void test_Conditions_For_AddNewTeacher_Method(String teacherName, double salary, boolean expectedResult){
+    void test_Conditions_For_SackTeacher_Method(String teacherName, double salary, boolean expectedResult){
         boolean addNewTeacher =  principal.addNewTeacher(teacherName, salary);
         Assertions.assertEquals(addNewTeacher, expectedResult);
     }
 
-    
+    // test conditions for sackTeacher method
+    public static Object[][] Tests_Conditions_expectedResult_sackTeacher(){
+        return new Object[][]{
+                // should not add new teacher
+                {" "},
+                {"  "},
+                {null},
+                {5000},
+                {"Mark"}
+
+        };
+    }
+    // should not sack teacher
+    @ParameterizedTest
+    @MethodSource
+    @Test
+    void shouldNot_Sack_Teacher(String teacherName){
+        boolean sackTeacher = principal.sackTeacher(teacherName);
+        Assertions.assertFalse(sackTeacher);
+
+    }
+
+    @Test
+    void should_Sack_Teacher(){
+        principal.addNewTeacher("Mark",3500);
+        boolean sackTeacher4 =  principal.sackTeacher("Mark");
+    }
+
 }

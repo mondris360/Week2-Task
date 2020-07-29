@@ -10,7 +10,7 @@ public class PersonTest {
 
     @BeforeEach()
     public void setup(){
-        address =  new Address("No 4A Ice Road", "Benin","Edo", "234","Nigeria");
+        address =  new Address("No 4A Ice Road", "Benin","Edo");
         person = new Person("Mark", "Andrew", 25, address );
         System.out.println("Running Test...");
     }

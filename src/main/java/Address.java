@@ -2,16 +2,13 @@ public class Address {
     private String street;
     private String city;
     private String state;
-    private String postalCode;
-    private String country;
 
 
-    public Address(String street, String city, String state, String postalCode, String country) {
+
+    public Address(String street, String city, String state) {
         this.street = street;
         this.city = city;
         this.state = state;
-        this.postalCode = postalCode;
-        this.country = country;
     }
 
     // getters and setters
@@ -27,13 +24,7 @@ public class Address {
         return state;
     }
 
-    public String getPostalCode() {
-        return postalCode;
-    }
 
-    public String getCountry() {
-        return country;
-    }
 
     public boolean setStreet(String street) {
         this.street = street;
@@ -52,13 +43,5 @@ public class Address {
 
     }
 
-    public boolean setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-        return true;
-    }
 
-    public boolean setCountry(String country) {
-        this.country = country;
-        return true;
-    }
 }

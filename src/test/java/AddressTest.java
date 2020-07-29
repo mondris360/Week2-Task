@@ -1,4 +1,3 @@
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,7 @@ class AddressTest {
 
     @BeforeEach
     public void setup(){
-        address =  new Address("No4a ice road", "Benin", "Edo", "0234", "Country");
+        address =  new Address("No4a ice road", "Benin", "Edo");
     }
 
     // Junit test for setAddress method()

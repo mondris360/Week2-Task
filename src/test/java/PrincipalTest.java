@@ -4,10 +4,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.security.Principal;
+
 // parameterized test
 public class PrincipalTest {
 
-    private static Principal principal;
+    private  Principal principal;
+
 
     @BeforeEach
     public void setup() {

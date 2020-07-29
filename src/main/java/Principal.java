@@ -186,48 +186,48 @@ public class Principal extends Staff{
         // this will convert any number sequence into 6 character.
         return String.format("%06d", number);
     }
-
-    public boolean validateNewStudentDetails (String applicantName, String applicantClass, int applicantAge){
-
-
-        if (applicantName.isEmpty() || applicantClass.isEmpty() || applicantAge ==0 ){
-            return false;
-        }
-        if (applicantName.isBlank() || applicantName.equals("JSS3") || applicantAge == 13){
-            return false;
-
-        } else if (applicantName == null  || applicantName.equals("SS3") || applicantAge == 16){
-
-            return false;
-        } else if (applicantName == null  || applicantName == null || applicantAge == 0) {
-            return false;
-
-        } else if (applicantName == null  || applicantName == null || applicantAge == 0) {
-             return false;
-
-        } else if (applicantName == null  && applicantName.equals("SS1") || applicantAge == 0) {
-            return false;
-
-        } else if ( applicantName == true &&  applicantName.equals("SS1") || applicantAge == 0)) {
-
-                return false;
-        }
-
-
-
-
-    }
-    public boolean expelStudent(String studentName, String studentClass, String reason){};
-    public boolean addNewTeacher(String teacherName, double Salary){};
-    public boolean sackTeacher(String teacherName){};
-    public boolean assignCourse(String teacherName, String courseName){};
-    public boolean addNewCourse(String courseName, String className){};
-    public boolean removeCourse(String courseName){};
-    public boolean increaseSchoolFees(String className, double newSchoolFees){};
-    public double getSchoolFees(String className){};
-    public boolean decreaseSchoolFees(String className, double newSchoolFees){};
-    public void getAllStudentsInAClass(String className){}
-    public int getTotalStudentsInAClass(String className){};
+    // implementation skipped because of time
+//    public boolean validateNewStudentDetails (String applicantName, String applicantClass, int applicantAge){
+//
+//
+//        if (applicantName.isEmpty() || applicantClass.isEmpty() || applicantAge ==0 ){
+//            return false;
+//        }
+//        if (applicantName.isBlank() || applicantName.equals("JSS3") || applicantAge == 13){
+//            return false;
+//
+//        } else if (applicantName == null  || applicantName.equals("SS3") || applicantAge == 16){
+//
+//            return false;
+//        } else if (applicantName == null  || applicantName == null || applicantAge == 0) {
+//            return false;
+//
+//        } else if (applicantName == null  || applicantName == null || applicantAge == 0) {
+//             return false;
+//
+//        } else if (applicantName == null  && applicantName.equals("SS1") || applicantAge == 0) {
+//            return false;
+//
+//        } else if ( applicantName == true &&  applicantName.equals("SS1") || applicantAge == 0)) {
+//
+//                return false;
+//        }
+//
+//
+//
+//
+//    }
+//    public boolean expelStudent(String studentName, String studentClass, String reason){};
+//    public boolean addNewTeacher(String teacherName, double Salary){};
+//    public boolean sackTeacher(String teacherName){};
+//    public boolean assignCourse(String teacherName, String courseName){};
+//    public boolean addNewCourse(String courseName, String className){};
+//    public boolean removeCourse(String courseName){};
+//    public boolean increaseSchoolFees(String className, double newSchoolFees){};
+//    public double getSchoolFees(String className){};
+//    public boolean decreaseSchoolFees(String className, double newSchoolFees){};
+//    public void getAllStudentsInAClass(String className){}
+//    public int getTotalStudentsInAClass(String className){};
 
 
 }
